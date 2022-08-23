@@ -55,6 +55,7 @@
     "async": "^3.2.4",
     "@types/selenium-webdriver": "^4.1.1",
     "selenium-webdriver": "^4.3.0",
-    "browserstack-local": "^1.5.1"
+    "browserstack-local": "^1.5.1",
+    "superstatic": "^8.0.0"
   }
 }
