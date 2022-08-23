@@ -1,5 +1,6 @@
 {
   "name": "scroll-timeline-polyfill",
+  "type": "module",
   "version": "1.0.0",
   "description": "A polyfill for scroll-driven animations on the web via ScrollTimeline",
   "source": "src/index.js",
