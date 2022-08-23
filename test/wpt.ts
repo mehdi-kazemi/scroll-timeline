@@ -374,7 +374,7 @@ async function runTestSuite(
 
   try {
     console.info(`[${name}] Connecting...`);
-    await driver.get('http://bs-local.com:9606/tests/runner.html');
+    await driver.get('http://bs-local.com:9606/test/runner.html');
 
     console.info(`[${name}] Running tests...`);
     await driver.executeScript(
