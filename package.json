@@ -5,12 +5,20 @@
   "source": "src/index.js",
   "main": "dist/scroll-timeline.js",
   "scripts": {
-    "build": "microbundle -f iife",
     "dev": "run-all \"serve\" \" microbundle watch -f iife \"",
     "deploy": "npm run build",
     "test:simple": "./test/setup/wpt-repo.sh && node ./test/webdriver/wpt-server-cli.js",
     "test:webdriver": "./test/setup/wpt-repo.sh && node test/webdriver/index.js"
+
+    "build:clean": "rimraf ./dist/",
+    "build:wpt": "microbundle -f modern --no-compress --define PACKAGE_VERSION=${npm_package_version},IS_WPT_BUILD=1",
+    "build": "microbundle -f modern --define PACKAGE_VERSION=${npm_package_version},IS_WPT_BUILD=0",
+    "lint": "eslint '**/*.ts'",
+    "prettier:fix": "prettier --write .",
+    "serve": "superstatic -p 9606 .",
+    "test": "node --loader ts-node/esm ./tests/wpt.ts"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/flackr/scroll-timeline.git"
