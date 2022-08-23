@@ -42,5 +42,5 @@ jobs:
         run: |
           npm run serve &
           ./wpt/wpt manifest
-          ./wpt/wpt serve --inject-script=${{ github.workspace }}/dist/container-query-polyfill.modern.js &
+          ./wpt/wpt serve --inject-script=${{ github.workspace }}/dist/scroll-timeline.js &
           npm test
