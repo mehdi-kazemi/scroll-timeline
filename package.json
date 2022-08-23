@@ -49,6 +49,11 @@
     "selenium-webdriver": "^4.0.0-alpha.7",
     "serve": "^13.0.2",
     "tiny-glob": "^0.2.6",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "@types/async": "^3.2.14",
+    "async": "^3.2.4",
+    "@types/selenium-webdriver": "^4.1.1",
+    "selenium-webdriver": "^4.3.0",
+    "browserstack-local": "^1.5.1"
   }
 }
