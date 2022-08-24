@@ -291,7 +291,7 @@ async function getTests(manifestPath: string): Promise<TestSuite> {
   const manifest = JSON.parse(manifestBuffer.toString());
 
 //   const prefix = `css/css-contain/container-queries`;
-  const prefix = `scroll-animations/css/`;
+  const prefix = `scroll-animations/css`;
 
   const htmlTests =
 //     manifest.items.testharness.css['css-contain']['container-queries'];
