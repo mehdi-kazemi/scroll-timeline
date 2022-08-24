@@ -45,11 +45,13 @@ interface BrowserDefinition {
   versions: BrowserVersion[];
 }
 
-const TEST_FILTERS: Array<RegExp> = [
-  /scroll-animations\/css/,
-  /scroll-animations\/scroll-timelines/,
-  /scroll-animations\/view-timelines/,
+const TEST_FOLDERS: Array<string> = [
+  "scroll-animations\/css",
+  "scroll-animations\/scroll-timelines",
+  "scroll-animations\/view-timelines",
 ];
+
+const TEST_FILTERS = TEST_FOLDERS.map(folder => new RegExp(folder));
 
 const SUBTEST_FILTERS: Array<RegExp> = [
 //   /calc\(.*\)/,
