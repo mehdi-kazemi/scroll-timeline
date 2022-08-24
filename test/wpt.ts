@@ -67,8 +67,8 @@ const SUBTEST_FILTERS: Array<RegExp> = [
 const CHROME_DEFINITION: BrowserDefinition = {
   name: 'Chrome',
   logo: 'https://unpkg.com/@browser-logos/chrome@2.0.0/chrome.svg',
-  versions: Array.from({length: 2})
-    .map((_, i) => 99 + i)
+  versions: Array.from({length: 1})
+    .map((_, i) => 100 + i)
     .filter(version => ![82].includes(version))
     .map(version => `${version}.0`)
     .map(browserVersion => ({
@@ -278,35 +278,39 @@ function stopLocalServer(server: Local): Promise<void> {
   });
 }
 
+function getValue(obj: any, path: string) {
+  const paths = path.split('\/');
+  for (var i=0, len=paths.length; i<len; i++)
+    obj = obj[paths[i]];
+  return obj;
+};
+
 async function getTests(manifestPath: string): Promise<TestSuite> {
   const manifestBuffer = await readFile(manifestPath);
   const manifest = JSON.parse(manifestBuffer.toString());
 
-//   const prefix = `css/css-contain/container-queries`;
-  const prefix = `scroll-animations/css`;
-
-  const htmlTests =
-//     manifest.items.testharness.css['css-contain']['container-queries'];
-    manifest.items.testharness['scroll-animations']['css'];
-  const refTests =
-//     manifest.items.reftest.css['css-contain']['container-queries'];
-    manifest.items.reftest['scroll-animations']['css'];
-
+  const js: Array<string> = [];
   const iframe: Array<[string, string]> = [];
-  Object.keys(refTests).forEach((name, id) => {
-    const data = refTests[name][1][1][0];
-    iframe.push(
-      [`ref${id}_test`, `http://web-platform.test:8000/${prefix}/${name}`],
-      [`ref${id}_match`, `http://web-platform.test:8000/${data[0]}`]
-    );
-  });
 
-  return {
-    js: Object.keys(htmlTests)
+  for(let folder_path of TEST_FOLDERS) {
+    const htmlTests = getValue(manifest.items.testharness, folder_path);
+    const refTests = getValue(manifest.items.reftest, folder_path);
+
+    Object.keys(refTests).forEach((name, id) => {
+      const data = refTests[name][1][1][0];
+      iframe.push(
+        [`ref${id}_test`, `http://web-platform.test:8000/${folder_path}/${name}`],
+        [`ref${id}_match`, `http://web-platform.test:8000/${data[0]}`]
+      );
+    });
+
+    Object.keys(htmlTests)
       .filter(name => !TEST_FILTERS.some(filter => filter.test(name)))
-      .map(name => `http://web-platform.test:8000/${prefix}/${name}`),
-    iframe,
-  };
+      .map(name => `http://web-platform.test:8000/${folder_path}/${name}`)
+      .forEach(test => { js.push(test); });
+  }
+
+  return { js, iframe };
 }
 
 function createWebDriver(capabilities: Record<string, unknown>) {
