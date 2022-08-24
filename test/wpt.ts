@@ -301,6 +301,8 @@ async function getTests(manifestPath: string): Promise<TestSuite> {
     const refTests = getValue(manifest.items.reftest, folder_path);
 
     if(refTests) {
+      console.info(`refTests: ${JSON.stringify(refTests)}`;
+                   
       Object.keys(refTests).forEach((name, id) => {
         const data = refTests[name][1][1][0];
         iframe.push(
@@ -311,6 +313,8 @@ async function getTests(manifestPath: string): Promise<TestSuite> {
     }
 
     if(htmlTests) {
+      console.info(`htmlTests: ${JSON.stringify(htmlTests)}`;
+
       Object.keys(htmlTests)
         .filter(name => !TEST_FILTERS.some(filter => filter.test(name)))
         .map(name => `http://web-platform.test:8000/${folder_path}/${name}`)
