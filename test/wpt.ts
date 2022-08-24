@@ -92,8 +92,8 @@ const SUBTEST_FILTERS: Array<RegExp> = [
 const CHROME_DEFINITION: BrowserDefinition = {
   name: 'Chrome',
   logo: 'https://unpkg.com/@browser-logos/chrome@2.0.0/chrome.svg',
-  versions: Array.from({length: 103 - 79})
-    .map((_, i) => 79 + i)
+  versions: Array.from({length: 4})
+    .map((_, i) => 99 + i)
     .filter(version => ![82].includes(version))
     .map(version => `${version}.0`)
     .map(browserVersion => ({
@@ -124,7 +124,7 @@ const SAFARI_IOS_DEFINITION: BrowserDefinition = {
       // ['15.2', '15'],
       // ['15.4', '15'],
       // ['15.5', '15'],
-      ['15.6', '15'],
+      // ['15.6', '15'],
     ] as Array<[string, string]>
   ).map(([browserVersion, osVersion]) => ({
     name: browserVersion,
@@ -244,7 +244,7 @@ const SAMSUNG_INTERNET_DEFINITION: BrowserDefinition = {
 const IE_DEFINITION: BrowserDefinition = {
   name: 'Internet Explorer',
   logo: 'https://unpkg.com/@browser-logos/internet-explorer_9-11@1.1.16/internet-explorer_9-11.svg',
-  versions: ['9', '10', '11'].map(browserVersion => ({
+  versions: [/*'9', '10', '11'*/].map(browserVersion => ({
     name: browserVersion,
     data: {type: DataType.Result, result: [0, 0]},
   })),
