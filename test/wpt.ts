@@ -418,10 +418,11 @@ async function main() {
     throw new Error('invariant: WPT_MANIFEST environment variable must be set');
   }
   
-  console.info(JSON.stringify(BROWSERS));
 
   const testSuite = await getTests(manifestPath);
   console.info(`Using tests: ${JSON.stringify(testSuite, null, 4)}`);
+  
+  console.info(`BROWSERS: ${JSON.stringify(BROWSERS)}`);
 
   const tests: Array<() => Promise<void>> = [];
   const results: BrowserDefinition[] = BROWSERS.map(browser => ({
