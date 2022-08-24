@@ -295,10 +295,10 @@ async function getTests(manifestPath: string): Promise<TestSuite> {
 
   const htmlTests =
 //     manifest.items.testharness.css['css-contain']['container-queries'];
-    manifest.items.testharness.css['scroll-animations']['css'];
+    manifest.items.testharness['scroll-animations']['css'];
   const refTests =
 //     manifest.items.reftest.css['css-contain']['container-queries'];
-    manifest.items.reftest.css['scroll-animations']['css'];
+    manifest.items.reftest['scroll-animations']['css'];
 
   const iframe: Array<[string, string]> = [];
   Object.keys(refTests).forEach((name, id) => {
