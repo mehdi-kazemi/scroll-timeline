@@ -417,6 +417,8 @@ async function main() {
   if (!manifestPath) {
     throw new Error('invariant: WPT_MANIFEST environment variable must be set');
   }
+  
+  console.info(JSON.stringify(BROWSERS));
 
   const testSuite = await getTests(manifestPath);
   console.info(`Using tests: ${JSON.stringify(testSuite, null, 4)}`);
