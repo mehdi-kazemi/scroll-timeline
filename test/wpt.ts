@@ -92,7 +92,7 @@ const SUBTEST_FILTERS: Array<RegExp> = [
 const CHROME_DEFINITION: BrowserDefinition = {
   name: 'Chrome',
   logo: 'https://unpkg.com/@browser-logos/chrome@2.0.0/chrome.svg',
-  versions: Array.from({length: 4})
+  versions: Array.from({length: 2})
     .map((_, i) => 99 + i)
     .filter(version => ![82].includes(version))
     .map(version => `${version}.0`)
@@ -447,6 +447,8 @@ async function main() {
               ),
             () => []
           );
+          
+          console.info(`results: ${results.length}`);
 
           let passed = 0;
           let failed = 0;
