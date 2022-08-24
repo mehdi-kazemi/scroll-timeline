@@ -51,21 +51,21 @@ const TEST_FILTERS: Array<RegExp> = [
   /calc-evaluation.html$/,
   /auto-scrollbars.html$/,
 
-  /container-inheritance.html$/,
-  /container-for-shadow-dom.html$/,
-  /container-units-shadow.html$/,
-  /container-longhand-animation-type.html$/,
-  /container-name-invalidation.html$/,
-  /container-name-parsing.html$/,
-  /container-parsing.html$/,
-  /container-type-containment.html$/,
-  /container-type-layout-invalidation.html$/,
-  /container-type-parsing.html$/,
-  /container-units-basic.html$/,
-  /container-units-in-at-container-fallback.html$/,
-  /container-units-invalidation.html$/,
-  /container-units-media-queries.html$/,
-  /container-units-selection.html$/,
+//   /container-inheritance.html$/,
+//   /container-for-shadow-dom.html$/,
+//   /container-units-shadow.html$/,
+//   /container-longhand-animation-type.html$/,
+//   /container-name-invalidation.html$/,
+//   /container-name-parsing.html$/,
+//   /container-parsing.html$/,
+//   /container-type-containment.html$/,
+//   /container-type-layout-invalidation.html$/,
+//   /container-type-parsing.html$/,
+//   /container-units-basic.html$/,
+//   /container-units-in-at-container-fallback.html$/,
+//   /container-units-invalidation.html$/,
+//   /container-units-media-queries.html$/,
+//   /container-units-selection.html$/,
   /container-units-small-viewport-fallback.html$/,
   /container-units-svglength.html$/,
   /container-units-typed-om.html$/,
@@ -449,6 +449,8 @@ async function main() {
           );
           
           console.info(`results: ${results.length}`);
+          console.info(`results: ${JSON.stringify(results)}`);
+
 
           let passed = 0;
           let failed = 0;
