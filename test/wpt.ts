@@ -302,12 +302,12 @@ async function getTests(manifestPath: string): Promise<TestSuite> {
 
     if(refTests) {
       console.info(`refTests: ${JSON.stringify(refTests)}`);
-                   
-      Object.keys(refTests).forEach((name, id) => {
+
+      Object.keys(refTests).forEach(name => {
         const data = refTests[name][1][1][0];
         iframe.push(
-          [`ref${id}_test`, `http://web-platform.test:8000/${folder_path}/${name}`],
-          [`ref${id}_match`, `http://web-platform.test:8000/${data[0]}`]
+          [`ref${iframe.length}_test`, `http://web-platform.test:8000/${folder_path}/${name}`],
+          [`ref${iframe.length}_match`, `http://web-platform.test:8000${data[0]}`]
         );
       });
     }
