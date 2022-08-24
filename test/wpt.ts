@@ -300,18 +300,22 @@ async function getTests(manifestPath: string): Promise<TestSuite> {
     const htmlTests = getValue(manifest.items.testharness, folder_path);
     const refTests = getValue(manifest.items.reftest, folder_path);
 
-    Object.keys(refTests).forEach((name, id) => {
-      const data = refTests[name][1][1][0];
-      iframe.push(
-        [`ref${id}_test`, `http://web-platform.test:8000/${folder_path}/${name}`],
-        [`ref${id}_match`, `http://web-platform.test:8000/${data[0]}`]
-      );
-    });
+    if(refTests) {
+      Object.keys(refTests).forEach((name, id) => {
+        const data = refTests[name][1][1][0];
+        iframe.push(
+          [`ref${id}_test`, `http://web-platform.test:8000/${folder_path}/${name}`],
+          [`ref${id}_match`, `http://web-platform.test:8000/${data[0]}`]
+        );
+      });
+    }
 
-    Object.keys(htmlTests)
-      .filter(name => !TEST_FILTERS.some(filter => filter.test(name)))
-      .map(name => `http://web-platform.test:8000/${folder_path}/${name}`)
-      .forEach(test => { js.push(test); });
+    if(htmlTests) {
+      Object.keys(htmlTests)
+        .filter(name => !TEST_FILTERS.some(filter => filter.test(name)))
+        .map(name => `http://web-platform.test:8000/${folder_path}/${name}`)
+        .forEach(test => { js.push(test); });
+    }
   }
 
   return { js, iframe };
