@@ -46,36 +46,19 @@ interface BrowserDefinition {
 }
 
 const TEST_FILTERS: Array<RegExp> = [
-  /-serialization.html$/,
-  /-computed.html$/,
-  /calc-evaluation.html$/,
-  /auto-scrollbars.html$/,
-
-//   /container-inheritance.html$/,
-//   /container-for-shadow-dom.html$/,
-//   /container-units-shadow.html$/,
-//   /container-longhand-animation-type.html$/,
-//   /container-name-invalidation.html$/,
-//   /container-name-parsing.html$/,
-//   /container-parsing.html$/,
-//   /container-type-containment.html$/,
-//   /container-type-layout-invalidation.html$/,
-//   /container-type-parsing.html$/,
-//   /container-units-basic.html$/,
-//   /container-units-in-at-container-fallback.html$/,
-//   /container-units-invalidation.html$/,
-//   /container-units-media-queries.html$/,
-//   /container-units-selection.html$/,
-  /container-units-small-viewport-fallback.html$/,
-  /container-units-svglength.html$/,
-  /container-units-typed-om.html$/,
-  /deep-nested-inline-size-containers.html$/,
-  /idlharness.html$/,
-  /iframe-in-container-invalidation.html$/,
-  /iframe-invalidation.html$/,
-  /percentage-padding-orthogonal.html$/,
-  /viewport-units-dynamic.html$/,
-  /viewport-units.html$/,
+  /at-scroll-timeline-source.html$/,
+  /at-scroll-timeline-specified-scroller-print-ref.html$/,
+  /at-scroll-timeline-specified-scroller-print.html$/,
+  /at-scroll-timeline-unknown-descriptor.tentative.html$/,
+  /progress-based-animation-animation-longhand-properties.tentative.html$/,
+  /progress-based-animation-timeline.html$/,
+  /scroll-timeline-axis-computed.tentative.html$/,
+  /scroll-timeline-axis-parsing.tentative.html$/,
+  /scroll-timeline-cssom.tentative.html$/,
+  /scroll-timeline-dynamic.tentative.html$/,
+  /scroll-timeline-name-computed.tentative.html$/,
+  /scroll-timeline-name-parsing.tentative.html$/,
+  /scroll-timeline-shorthand.tentative.html$/,
 ];
 
 const SUBTEST_FILTERS: Array<RegExp> = [
@@ -307,11 +290,15 @@ async function getTests(manifestPath: string): Promise<TestSuite> {
   const manifestBuffer = await readFile(manifestPath);
   const manifest = JSON.parse(manifestBuffer.toString());
 
-  const prefix = `css/css-contain/container-queries`;
+//   const prefix = `css/css-contain/container-queries`;
+  const prefix = `scroll-animations/css/`;
+
   const htmlTests =
-    manifest.items.testharness.css['css-contain']['container-queries'];
+//     manifest.items.testharness.css['css-contain']['container-queries'];
+    manifest.items.testharness.css['scroll-animations']['css'];
   const refTests =
-    manifest.items.reftest.css['css-contain']['container-queries'];
+//     manifest.items.reftest.css['css-contain']['container-queries'];
+    manifest.items.reftest.css['scroll-animations']['css'];
 
   const iframe: Array<[string, string]> = [];
   Object.keys(refTests).forEach((name, id) => {
