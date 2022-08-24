@@ -280,6 +280,8 @@ function stopLocalServer(server: Local): Promise<void> {
 
 function getValue(obj: any, path: string) {
   const paths = path.split('\/');
+  console.info(`paths => ${paths}`);
+
   for (var i=0, len=paths.length; i<len; i++)
     obj = obj[paths[i]];
   return obj;
@@ -293,6 +295,8 @@ async function getTests(manifestPath: string): Promise<TestSuite> {
   const iframe: Array<[string, string]> = [];
 
   for(let folder_path of TEST_FOLDERS) {
+    console.info(`folder_path => ${folder_path}`);
+
     const htmlTests = getValue(manifest.items.testharness, folder_path);
     const refTests = getValue(manifest.items.reftest, folder_path);
 
