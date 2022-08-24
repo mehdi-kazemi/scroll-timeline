@@ -46,30 +46,20 @@ interface BrowserDefinition {
 }
 
 const TEST_FILTERS: Array<RegExp> = [
-  /at-scroll-timeline-source.html$/,
-  /at-scroll-timeline-specified-scroller-print-ref.html$/,
-  /at-scroll-timeline-specified-scroller-print.html$/,
-  /at-scroll-timeline-unknown-descriptor.tentative.html$/,
-  /progress-based-animation-animation-longhand-properties.tentative.html$/,
-  /progress-based-animation-timeline.html$/,
-  /scroll-timeline-axis-computed.tentative.html$/,
-  /scroll-timeline-axis-parsing.tentative.html$/,
-  /scroll-timeline-cssom.tentative.html$/,
-  /scroll-timeline-dynamic.tentative.html$/,
-  /scroll-timeline-name-computed.tentative.html$/,
-  /scroll-timeline-name-parsing.tentative.html$/,
-  /scroll-timeline-shorthand.tentative.html$/,
+  /scroll-animations\/css/,
+  /scroll-animations\/scroll-timelines/,
+  /scroll-animations\/view-timelines/,
 ];
 
 const SUBTEST_FILTERS: Array<RegExp> = [
-  /calc\(.*\)/,
-  /max\(.*\)/,
-  /style\(.*\)/,
-  /#container width 399px after padding is applied. #second is removed from the rendering/,
-  /ex units/,
-  /ch units/,
-  /ex relative/,
-  /ch relative/,
+//   /calc\(.*\)/,
+//   /max\(.*\)/,
+//   /style\(.*\)/,
+//   /#container width 399px after padding is applied. #second is removed from the rendering/,
+//   /ex units/,
+//   /ch units/,
+//   /ex relative/,
+//   /ch relative/,
 ];
 
 const CHROME_DEFINITION: BrowserDefinition = {
