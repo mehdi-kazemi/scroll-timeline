@@ -280,7 +280,7 @@ function stopLocalServer(server: Local): Promise<void> {
 
 function getValue(obj: any, path: string) {
   const paths = path.split('\/');
-  console.info(`paths => ${paths}`);
+  // console.info(`paths => ${paths}`);
 
   for (var i=0, len=paths.length; i<len; i++)
     obj = obj[paths[i]];
@@ -415,7 +415,7 @@ async function main() {
   
 
   const testSuite = await getTests(manifestPath);
-  // console.info(`Using tests: ${JSON.stringify(testSuite, null, 4)}`);
+  console.info(`Using tests: ${JSON.stringify(testSuite, null, 4)}`);
   
   // console.info(`BROWSERS: ${JSON.stringify(BROWSERS)}`);
 
@@ -443,9 +443,8 @@ async function main() {
             () => []
           );
           
-          console.info(`results: ${results.length}`);
-          console.info(`results: ${JSON.stringify(results)}`);
-
+          // console.info(`results: ${results.length}`);
+          // console.info(`results: ${JSON.stringify(results)}`);
 
           let passed = 0;
           let failed = 0;
@@ -475,6 +474,7 @@ async function main() {
   const server = await createLocalServer();
   try {
     await eachLimit(tests, 5, async test => await test());
+    console.info(`results.length=${results.length}`);
     console.log(JSON.stringify(results, null, 2));
   } finally {
     await stopLocalServer(server);
