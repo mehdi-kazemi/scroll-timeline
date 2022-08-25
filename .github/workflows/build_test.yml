@@ -59,4 +59,4 @@ jobs:
           git checkout -b test-results
           git add test-results
           git commit -m "Add new results to test-results folder!"
-          git push origin master
+          git push origin test-results
