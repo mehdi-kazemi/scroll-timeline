@@ -13,6 +13,7 @@
 
 import {eachLimit, retry} from 'async';
 import {readFile} from 'fs/promises';
+import {writeFile} from 'fs';
 import {Agent} from 'http';
 import {Builder, By, until} from 'selenium-webdriver';
 import {Local} from 'browserstack-local';
@@ -475,7 +476,15 @@ async function main() {
   try {
     await eachLimit(tests, 5, async test => await test());
     console.info(`results.length=${results.length}`);
-    console.log(JSON.stringify(results, null, 2));
+
+    const resultJson = JSON.stringify(results, null, 2);
+
+    console.log(resultJson);
+    writeFile("final-result.txt", resultJson, (err: any) => {
+      if(err) return console.log(err);
+      console.log("final-result.txt created!");
+    });
+
   } finally {
     await stopLocalServer(server);
   }

@@ -44,3 +44,18 @@ jobs:
           ./wpt/wpt manifest
           ./wpt/wpt serve --inject-script=${{ github.workspace }}/dist/scroll-timeline.js &
           npm test
+
+      - name: setup git config
+        run: |
+          # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+
+      - name: commit
+        run: |
+          # Stage the file, commit and push
+          pwd
+          git checkout master
+          git add final-result.txt
+          git commit -m "new final-result.txt"
+          git push origin master
