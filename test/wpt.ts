@@ -295,13 +295,13 @@ async function getTests(manifestPath: string): Promise<TestSuite> {
   const iframe: Array<[string, string]> = [];
 
   for(let folder_path of TEST_FOLDERS) {
-    console.info(`folder_path => ${folder_path}`);
+    // console.info(`folder_path => ${folder_path}`);
 
     const htmlTests = getValue(manifest.items.testharness, folder_path);
     const refTests = getValue(manifest.items.reftest, folder_path);
 
     if(refTests) {
-      console.info(`refTests: ${JSON.stringify(refTests)}`);
+      // console.info(`refTests: ${JSON.stringify(refTests)}`);
 
       Object.keys(refTests).forEach(name => {
         const data = refTests[name][1][1][0];
@@ -313,7 +313,7 @@ async function getTests(manifestPath: string): Promise<TestSuite> {
     }
 
     if(htmlTests) {
-      console.info(`htmlTests: ${JSON.stringify(htmlTests)}`);
+      // console.info(`htmlTests: ${JSON.stringify(htmlTests)}`);
 
       Object.keys(htmlTests)
         .filter(name => !TEST_FILTERS.some(filter => filter.test(name)))
@@ -415,9 +415,9 @@ async function main() {
   
 
   const testSuite = await getTests(manifestPath);
-  console.info(`Using tests: ${JSON.stringify(testSuite, null, 4)}`);
+  // console.info(`Using tests: ${JSON.stringify(testSuite, null, 4)}`);
   
-  console.info(`BROWSERS: ${JSON.stringify(BROWSERS)}`);
+  // console.info(`BROWSERS: ${JSON.stringify(BROWSERS)}`);
 
   const tests: Array<() => Promise<void>> = [];
   const results: BrowserDefinition[] = BROWSERS.map(browser => ({
