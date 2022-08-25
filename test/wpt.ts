@@ -13,7 +13,7 @@
 
 import {eachLimit, retry} from 'async';
 import {readFile} from 'fs/promises';
-import {writeFile} from 'fs';
+import {writeFile, existsSync, mkdirSync} from 'fs';
 import {Agent} from 'http';
 import {Builder, By, until} from 'selenium-webdriver';
 import {Local} from 'browserstack-local';
@@ -408,6 +408,27 @@ async function tryOrDefault<T>(fn: () => Promise<T>, def: () => T): Promise<T> {
   }
 }
 
+function padTo2Digits(num: number) {
+  return num.toString().padStart(2, '0');
+}
+
+// Format as "YYYY-MM-DD_hh-mm-ss"
+function formatDate(date: Date) {
+  return (
+    [
+      date.getFullYear(),
+      padTo2Digits(date.getMonth() + 1),
+      padTo2Digits(date.getDate()),
+    ].join('-') +
+    '_S' +
+    [
+      padTo2Digits(date.getHours()),
+      padTo2Digits(date.getMinutes()),
+      padTo2Digits(date.getSeconds()),
+    ].join('-')
+  );
+}
+
 async function main() {
   const manifestPath = process.env.WPT_MANIFEST;
   if (!manifestPath) {
@@ -476,13 +497,17 @@ async function main() {
   try {
     await eachLimit(tests, 5, async test => await test());
     console.info(`results.length=${results.length}`);
-
     const resultJson = JSON.stringify(results, null, 2);
 
+    const testResultsFolder = "test-results";
+    const fileName = formatDate(new Date());
+    if(!existsSync(testResultsFolder))
+      mkdirSync(testResultsFolder);
+
     console.log(resultJson);
-    writeFile("final-result.txt", resultJson, (err: any) => {
+    writeFile(`${testResultsFolder}/${fileName}.json`, resultJson, (err: any) => {
       if(err) return console.log(err);
-      console.log("final-result.txt created!");
+      console.log(`${testResultsFolder}/${fileName}.json created!`);
     });
 
   } finally {
