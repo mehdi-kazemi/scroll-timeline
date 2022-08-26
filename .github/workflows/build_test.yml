@@ -69,8 +69,8 @@ jobs:
           git pull origin master
           echo "git switch -c test-results"
           git switch -c test-results
-          echo "git pull origin test-results"
-          git pull origin test-results
+          # echo "git pull origin test-results"
+          # git pull origin test-results
           echo "git rebase master"
           git rebase master
           echo "git stash apply"
