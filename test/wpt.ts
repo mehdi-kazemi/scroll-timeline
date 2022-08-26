@@ -48,8 +48,8 @@ interface BrowserDefinition {
 
 const TEST_FOLDERS: Array<string> = [
   "scroll-animations\/css",
-  "scroll-animations\/scroll-timelines",
-  "scroll-animations\/view-timelines",
+  // "scroll-animations\/scroll-timelines",
+  // "scroll-animations\/view-timelines",
 ];
 
 const TEST_FILTERS = TEST_FOLDERS.map(folder => new RegExp(folder));

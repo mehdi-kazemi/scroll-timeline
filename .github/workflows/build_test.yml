@@ -55,8 +55,14 @@ jobs:
         run: |
           # Stage the file, commit and push
           pwd
+          git stash
           git fetch
-          git checkout -b test-results
+          git pull origin master
+          git switch -c test-results
+          git pull origin test-results
+          git rebase master
+          git stash apply
           git add test-results
+          git add test-results.html
           git commit -m "Add new results to test-results folder!"
           git push origin test-results
