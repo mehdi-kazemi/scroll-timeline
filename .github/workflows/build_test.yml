@@ -55,27 +55,19 @@ jobs:
         run: |
           # Stage the file, commit and push
           pwd
-          echo "git status"
           git status
-          echo "git stash"
           git stash
-          echo "git fetch"
           git fetch
-          echo "git config pull.rebase true"
           git config pull.rebase true
-          echo "git checkout master"
           git checkout master
-          echo "git pull origin master"
           git pull origin master
-          echo "git switch -c test-results"
           git switch -c test-results
-          # echo "git pull origin test-results"
           # git pull origin test-results
-          echo "git rebase master"
           git rebase master
-          # echo "git stash apply"
-          # git stash apply
+          git stash apply
           git add test-results
           git add test-results.html
+          git checkout --ours test-results.html
+          git add test-results.html
           git commit -m "Add new results to test-results folder!"
-          git push --force origin test-results
+          git push origin test-results
