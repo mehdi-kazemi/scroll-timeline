@@ -13,7 +13,7 @@
 
 import {eachLimit, retry} from 'async';
 import {readFile} from 'fs/promises';
-import {writeFile, existsSync, mkdirSync} from 'fs';
+import {writeFileSync, existsSync, mkdirSync, readdirSync} from 'fs';
 import {Agent} from 'http';
 import {Builder, By, until} from 'selenium-webdriver';
 import {Local} from 'browserstack-local';
@@ -505,10 +505,29 @@ async function main() {
       mkdirSync(testResultsFolder);
 
     console.log(resultJson);
-    writeFile(`${testResultsFolder}/${fileName}.json`, resultJson, (err: any) => {
-      if(err) return console.log(err);
-      console.log(`${testResultsFolder}/${fileName}.json created!`);
-    });
+    writeFileSync(`${testResultsFolder}/${fileName}.json`, resultJson);
+
+    var rows = "";
+    readdirSync(process.cwd() + "/test-results").sort((a: any, b: any) => (a > b ? -1 : 1))
+      .forEach( (file: any) => {
+        console.log("> " + file);
+        rows += `<li><a href="test-results/${file}">test-results/${file}</a></li>`;
+      });
+
+      var html = `
+      <!doctype html>
+      <html lang="en">
+      <head>
+          <title>Test Results</title>
+      </head>
+      <body>
+      <ul>
+      ${rows}
+      </ul>
+      </body>
+      </html>`;
+
+      writeFileSync("test-results.html", html);
 
   } finally {
     await stopLocalServer(server);
