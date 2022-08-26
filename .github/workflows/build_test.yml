@@ -73,9 +73,9 @@ jobs:
           # git pull origin test-results
           echo "git rebase master"
           git rebase master
-          echo "git stash apply"
-          git stash apply
+          # echo "git stash apply"
+          # git stash apply
           git add test-results
           git add test-results.html
           git commit -m "Add new results to test-results folder!"
-          git push origin test-results
+          git push --force origin test-results
