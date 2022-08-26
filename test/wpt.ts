@@ -324,8 +324,9 @@ async function getTests(manifestPath: string): Promise<TestSuite> {
   }
 
   return {
-    js: js.slice(0, 3), // Reducing the number of tests for now
-    iframe : [] // Reducing the number of tests for now
+    // js: js.slice(0, 3), // Reducing the number of tests for now
+    // iframe : [] // Reducing the number of tests for now
+    js, iframe
   };
 }
 
