@@ -55,13 +55,21 @@ jobs:
         run: |
           # Stage the file, commit and push
           pwd
+          echo "git stash"
           git stash
+          echo "git fetch"
           git fetch
+          echo "git config pull.rebase true"
           git config pull.rebase true
+          echo "git pull origin master"
           git pull origin master
+          echo "git switch -c test-results"
           git switch -c test-results
+          echo "git pull origin test-results"
           git pull origin test-results
+          echo "git rebase master"
           git rebase master
+          echo "git stash apply"
           git stash apply
           git add test-results
           git add test-results.html
