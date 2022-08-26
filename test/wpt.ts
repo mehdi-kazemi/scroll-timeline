@@ -48,8 +48,8 @@ interface BrowserDefinition {
 
 const TEST_FOLDERS: Array<string> = [
   "scroll-animations\/css",
-  // "scroll-animations\/scroll-timelines",
-  // "scroll-animations\/view-timelines",
+  "scroll-animations\/scroll-timelines",
+  "scroll-animations\/view-timelines",
 ];
 
 const TEST_FILTERS = TEST_FOLDERS.map(folder => new RegExp(folder));
@@ -68,7 +68,7 @@ const SUBTEST_FILTERS: Array<RegExp> = [
 const CHROME_DEFINITION: BrowserDefinition = {
   name: 'Chrome',
   logo: 'https://unpkg.com/@browser-logos/chrome@2.0.0/chrome.svg',
-  versions: Array.from({length: 1})
+  versions: Array.from({length: 2})
     .map((_, i) => 100 + i)
     .filter(version => ![82].includes(version))
     .map(version => `${version}.0`)
@@ -100,7 +100,7 @@ const SAFARI_IOS_DEFINITION: BrowserDefinition = {
       // ['15.2', '15'],
       // ['15.4', '15'],
       // ['15.5', '15'],
-      // ['15.6', '15'],
+      ['15.6', '15'],
     ] as Array<[string, string]>
   ).map(([browserVersion, osVersion]) => ({
     name: browserVersion,
@@ -125,7 +125,7 @@ const SAFARI_MACOS_DEFINITION: BrowserDefinition = {
     [
       // ['13.1', 'Catalina'],
       // ['14.1', 'Big Sur'],
-      // ['15.3', 'Monterey'],
+      ['15.3', 'Monterey'],
     ] as Array<[string, string]>
   ).map(([browserVersion, osVersion]) => ({
     name: browserVersion,
@@ -146,8 +146,8 @@ const SAFARI_MACOS_DEFINITION: BrowserDefinition = {
 const EDGE_DEFINITION: BrowserDefinition = {
   name: 'Edge',
   logo: 'https://unpkg.com/@browser-logos/edge@2.0.5/edge.svg',
-  versions: Array.from({length: 0 /*102 - 80*/})
-    .map((_, i) => 80 + i)
+  versions: Array.from({length: 2 /*102 - 80*/})
+    .map((_, i) => 99 + i)
     .filter(version => ![82].includes(version))
     .map(version => `${version}.0`)
     .map(browserVersion => ({
@@ -169,8 +169,8 @@ const EDGE_DEFINITION: BrowserDefinition = {
 const FIREFOX_DEFINITION: BrowserDefinition = {
   name: 'Firefox',
   logo: 'https://unpkg.com/@browser-logos/firefox@3.0.9/firefox.svg',
-  versions: Array.from({length: 0 /*101 - 69*/})
-    .map((_, i) => 69 + i)
+  versions: Array.from({length: 2 /*101 - 69*/})
+    .map((_, i) => 99 + i)
     .map(version => `${version}.0`)
     .map(browserVersion => ({
       name: browserVersion,
