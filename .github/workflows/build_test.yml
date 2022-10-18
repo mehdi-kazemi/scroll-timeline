@@ -54,6 +54,7 @@ jobs:
       - name: commit
         run: |
           # Stage the file, commit and push
+          git branch
           pwd
           git status
           git stash
