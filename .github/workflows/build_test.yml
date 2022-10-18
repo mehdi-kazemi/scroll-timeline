@@ -59,7 +59,7 @@ jobs:
           git status
           git stash
           git fetch
-          # git config pull.rebase true
+          git config pull.rebase true
           # git checkout master
           # git pull origin master
           git switch -c test-results
