@@ -55,23 +55,8 @@ jobs:
         run: |
           # Stage the file, commit and push
           git stash
-          pwd
-          git branch
-          pwd
-          git branch -a
-          pwd
-          git status
           git fetch
           git switch test-results
-          # git config pull.rebase true
-          pwd
-          git branch
-          pwd
-          git status
-          pwd
           git add test-runs
-          # git checkout --ours test-results.html
-          # git add test-results.html
           git commit -m "Add new results to test-runs folder!"
-          # (git pull origin test-results | true)
           git push origin test-results
