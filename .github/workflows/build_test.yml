@@ -74,4 +74,5 @@ jobs:
           # git checkout --ours test-results.html
           # git add test-results.html
           git commit -m "Add new results to test-runs folder!"
+          git pull origin test-results
           git push origin test-results
