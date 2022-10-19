@@ -62,7 +62,7 @@ jobs:
           # git diff package-lock.json
           git stash
           git fetch
-          # git config pull.rebase true
+          git config pull.rebase true
           # git checkout master
           # git pull origin master
           (git checkout test-results | git checkout -b test-results)
