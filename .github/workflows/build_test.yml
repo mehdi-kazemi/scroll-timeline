@@ -65,8 +65,9 @@ jobs:
           git config pull.rebase true
           # git checkout master
           # git pull origin master
-          (git checkout test-results | git checkout -b test-results)
-          (git pull origin test-results | true)
+          git checkout -b test-results
+          # (git checkout test-results | git checkout -b test-results)
+          # (git pull origin test-results | true)
           # git rebase master
           # git stash apply
           # git add test-results.html
@@ -74,5 +75,5 @@ jobs:
           # git checkout --ours test-results.html
           # git add test-results.html
           git commit -m "Add new results to test-runs folder!"
-          git pull origin test-results
+          (git pull origin test-results | true)
           git push origin test-results
