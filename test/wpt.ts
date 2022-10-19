@@ -531,7 +531,8 @@ async function main() {
       </body>
       </html>`;
 
-      writeFileSync("test-results.html", html);
+      // TODO: don't create this file yet!
+      // writeFileSync("test-results.html", html);
 
   } finally {
     await stopLocalServer(server);
