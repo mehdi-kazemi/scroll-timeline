@@ -60,7 +60,7 @@ jobs:
           git add test-runs
           git commit -m "Add new results to test-runs folder!"
           
-          npm create_listing
+          npm run create_listing
           git add test-runs.html
           git commit -m "Update test-runs.html"
 
