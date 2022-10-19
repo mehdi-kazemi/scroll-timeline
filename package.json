@@ -16,7 +16,8 @@
     "lint": "eslint '**/*.ts'",
     "prettier:fix": "prettier --write .",
     "serve": "superstatic -p 9606 .",
-    "test": "node --loader ts-node/esm ./test/wpt.ts"
+    "test": "node --loader ts-node/esm ./test/wpt.ts",
+    "create_listing": "node --loader ts-node/esm ./test/list_test_runs.ts"
   },
 
   "repository": {
