@@ -59,4 +59,9 @@ jobs:
           git switch test-results
           git add test-runs
           git commit -m "Add new results to test-runs folder!"
+          
+          node --loader ts-node/esm ./test/list_test_runs.ts
+          git add test-runs.html
+          git commit -m "Update test-runs.html"
+
           git push origin test-results

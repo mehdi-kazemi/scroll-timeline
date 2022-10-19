@@ -511,6 +511,7 @@ async function main() {
     console.log(resultJson);
     writeFileSync(`${testResultsFolder}/${fileName}.json`, resultJson);
 
+    /*
     var rows = "";
     readdirSync(process.cwd() + "/test-runs").sort((a: any, b: any) => (a > b ? -1 : 1))
       .forEach( (file: any) => {
@@ -530,7 +531,7 @@ async function main() {
       </ul>
       </body>
       </html>`;
-
+*/
       // TODO: don't create this file yet!
       // Each push should create it from scratch, from all of the existing files,
       // then overwrites it, and pushes it so the github pages is kept up-to-date.
