@@ -68,7 +68,7 @@ jobs:
           # git rebase master
           # git stash apply
           # git add test-results.html
-          git add test-results/
+          git add -- test-results/
           # git checkout --ours test-results.html
           # git add test-results.html
           git commit -m "Add new results to test-results folder!"
