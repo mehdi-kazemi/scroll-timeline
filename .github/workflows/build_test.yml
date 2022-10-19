@@ -67,7 +67,15 @@ jobs:
           # git pull origin master
           # git checkout -b test-results
           (git checkout test-results | git checkout -b test-results)
+          pwd
+          git branch
+          pwd
+          git stash
+          pwd
           (git pull origin test-results | true)
+          pwd
+          git status
+          pwd
           # git rebase master
           # git stash apply
           # git add test-results.html
