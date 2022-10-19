@@ -1,8 +1,8 @@
 import {writeFileSync, readdirSync} from 'fs';
 
 var rows = "";
-readdirSync(process.cwd() + "/test-runs").sort((a: any, b: any) => (a > b ? -1 : 1))
-  .forEach( (file: any) => {
+readdirSync(process.cwd() + "/test-runs").sort((a, b) => (a > b ? -1 : 1))
+  .forEach( (file) => {
     console.log("> " + file);
     rows += `<li><a href="test-runs/${file}">test-runs/${file}</a></li>`;
   });
