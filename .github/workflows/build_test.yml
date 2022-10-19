@@ -54,34 +54,24 @@ jobs:
       - name: commit
         run: |
           # Stage the file, commit and push
+          git stash
+          pwd
           git branch
           pwd
           git branch -a
           pwd
           git status
-          # git diff package-lock.json
-          git stash
           git fetch
-          git config pull.rebase true
-          # git checkout master
-          # git pull origin master
-          # git checkout -b test-results
-          (git checkout test-results | git checkout -b test-results)
+          git switch test-results
+          # git config pull.rebase true
           pwd
           git branch
           pwd
-          git stash
-          pwd
-          (git pull origin test-results | true)
-          pwd
           git status
           pwd
-          # git rebase master
-          # git stash apply
-          # git add test-results.html
           git add test-runs
           # git checkout --ours test-results.html
           # git add test-results.html
           git commit -m "Add new results to test-runs folder!"
-          (git pull origin test-results | true)
+          # (git pull origin test-results | true)
           git push origin test-results
