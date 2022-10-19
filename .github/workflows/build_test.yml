@@ -65,9 +65,9 @@ jobs:
           git config pull.rebase true
           # git checkout master
           # git pull origin master
-          git checkout -b test-results
-          # (git checkout test-results | git checkout -b test-results)
-          # (git pull origin test-results | true)
+          # git checkout -b test-results
+          (git checkout test-results | git checkout -b test-results)
+          (git pull origin test-results | true)
           # git rebase master
           # git stash apply
           # git add test-results.html
