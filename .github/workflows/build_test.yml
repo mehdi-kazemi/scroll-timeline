@@ -57,7 +57,8 @@ jobs:
           git branch
           pwd
           git status
-          # git stash
+          git diff package-lock.json
+          git stash
           git fetch
           git config pull.rebase true
           # git checkout master
