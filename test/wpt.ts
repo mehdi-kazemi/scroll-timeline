@@ -503,7 +503,7 @@ async function main() {
     console.info(`results.length=${results.length}`);
     const resultJson = JSON.stringify(results, null, 2);
 
-    const testResultsFolder = "test-results";
+    const testResultsFolder = "test-runs";
     const fileName = formatDate(new Date());
     if(!existsSync(testResultsFolder))
       mkdirSync(testResultsFolder);
@@ -512,10 +512,10 @@ async function main() {
     writeFileSync(`${testResultsFolder}/${fileName}.json`, resultJson);
 
     var rows = "";
-    readdirSync(process.cwd() + "/test-results").sort((a: any, b: any) => (a > b ? -1 : 1))
+    readdirSync(process.cwd() + "/test-runs").sort((a: any, b: any) => (a > b ? -1 : 1))
       .forEach( (file: any) => {
         console.log("> " + file);
-        rows += `<li><a href="test-results/${file}">test-results/${file}</a></li>`;
+        rows += `<li><a href="test-runs/${file}">test-runs/${file}</a></li>`;
       });
 
       var html = `
@@ -534,7 +534,7 @@ async function main() {
       // TODO: don't create this file yet!
       // Each push should create it from scratch, from all of the existing files,
       // then overwrites it, and pushes it so the github pages is kept up-to-date.
-      // writeFileSync("test-results.html", html);
+      // writeFileSync("test-runs.html", html);
 
   } finally {
     await stopLocalServer(server);
