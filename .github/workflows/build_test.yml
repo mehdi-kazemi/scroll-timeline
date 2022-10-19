@@ -57,14 +57,13 @@ jobs:
           git branch
           pwd
           git status
-          git diff package-lock.json
+          # git diff package-lock.json
           git stash
           git fetch
           git config pull.rebase true
           # git checkout master
           # git pull origin master
-          (git switch -c test-results | true)
-          git checkout test-results
+          (git checkout test-results | git checkout -b test-results)
           (git pull origin test-results | true)
           # git rebase master
           # git stash apply
