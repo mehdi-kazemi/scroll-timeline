@@ -38,7 +38,6 @@ jobs:
           cd wpt
           pip install virtualenv
           ./wpt make-hosts-file | sudo tee -a /etc/hosts
-
       - name: Run Tests
         run: |
           npm run serve &
@@ -46,19 +45,35 @@ jobs:
           ./wpt/wpt serve --inject-script=${{ github.workspace }}/dist/scroll-timeline.js &
           npm test
 
-      - name: Setup git config
+      - name: setup git config
         run: |
           # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
 
-      - name: Commit, pull, push
+      - name: commit
         run: |
-          # stash package-lock.json
+          # Stage the file, commit and push
+          git branch
+          pwd
+          git branch -a
+          pwd
+          git status
+          # git diff package-lock.json
           git stash
+          git fetch
           git config pull.rebase true
+          # git checkout master
+          # git pull origin master
           git checkout -b test-results
+          # (git checkout test-results | git checkout -b test-results)
+          # (git pull origin test-results | true)
+          # git rebase master
+          # git stash apply
+          # git add test-results.html
           git add test-runs
+          # git checkout --ours test-results.html
+          # git add test-results.html
           git commit -m "Add new results to test-runs folder!"
           (git pull origin test-results | true)
           git push origin test-results
