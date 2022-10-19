@@ -532,6 +532,8 @@ async function main() {
       </html>`;
 
       // TODO: don't create this file yet!
+      // Each push should create it from scratch, from all of the existing files,
+      // then overwrites it, and pushes it so the github pages is kept up-to-date.
       // writeFileSync("test-results.html", html);
 
   } finally {
