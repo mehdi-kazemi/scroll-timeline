@@ -68,7 +68,7 @@ const SUBTEST_FILTERS: Array<RegExp> = [
 const CHROME_DEFINITION: BrowserDefinition = {
   name: 'Chrome',
   logo: 'https://unpkg.com/@browser-logos/chrome@2.0.0/chrome.svg',
-  versions: Array.from({length: 1})
+  versions: Array.from({length: 3})
     .map((_, i) => 100 + i)
     .filter(version => ![82].includes(version))
     .map(version => `${version}.0`)
@@ -169,7 +169,7 @@ const EDGE_DEFINITION: BrowserDefinition = {
 const FIREFOX_DEFINITION: BrowserDefinition = {
   name: 'Firefox',
   logo: 'https://unpkg.com/@browser-logos/firefox@3.0.9/firefox.svg',
-  versions: Array.from({length: 0 /*101 - 69*/})
+  versions: Array.from({length: 3 /*101 - 69*/})
     .map((_, i) => 69 + i)
     .map(version => `${version}.0`)
     .map(browserVersion => ({
