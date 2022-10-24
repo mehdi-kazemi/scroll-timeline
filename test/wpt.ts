@@ -543,14 +543,14 @@ async function main() {
   }
 }
 
-function createHtmlResultPage(results: BrowserDefinition[],
+function createHtmlResultPage(results: any,
   testResultsFolder: string, fileName: string) {
   let cssStyle = `#container{
       display: flex;
     }
 
     .box {
-      width: 110px;
+      width: 130px;
       height: 50px;
       background-color: beige;
       margin: 5px;
@@ -560,7 +560,7 @@ function createHtmlResultPage(results: BrowserDefinition[],
     }
 
     .title {
-      width: 110px;
+      width: 130px;
       height: 50px;
       margin: 5px;
       background-color: white;
@@ -578,11 +578,11 @@ function createHtmlResultPage(results: BrowserDefinition[],
     <div>
       <div class="title">${browser.name}</div>
       ${
-        browser.versions.map(v => {
-          // const passed = v.data.result[0];
-          // const failed = v.data.result[1];
-          const passed = 10;
-          const failed = 7;
+        browser.versions.map((v: any) => {
+          const passed = v.data.result[0];
+          const failed = v.data.result[1];
+          // const passed = 10;
+          // const failed = 7;
           const total = passed + failed;
           return `<div class="box">${v.name} <br> ${passed} / ${total}</div>`;
         }).join(" ")
