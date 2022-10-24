@@ -1,0 +1,1177 @@
+<!doctype html>
+    <html lang="en">
+    <head>
+      <title>Test Results</title>
+      <style>body {
+    width: 2000px;
+  }
+
+  .browser {
+    background-color: beige;
+    border: 1px solid gray;
+    border-radius: 3px;
+    margin-top: 10px;
+    padding: 5px;
+  }
+
+  .test {
+    border: 1px solid gray;
+    padding: 5px;
+    border-radius: 3px;
+    margin-top: 5px;
+  }
+
+  .passed {
+    width: 50px;
+    background-color: green;
+    color: white;
+    border-radius: 3px;
+    padding: 3px;
+    margin-top: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .failed {
+    width: 50px;
+    background-color: #DC143C;
+    color: white;
+    border-radius: 3px;
+    padding: 3px;
+    margin-top: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .message {
+    margin-left: 60px;
+  }
+
+  .subtest {
+    padding: 3px;
+    margin-top: 2px;
+  }</style>
+    </head>
+    <body>
+
+    <div>
+    <div class='browser'>Chrome 100.0</div><div class='test'>http://web-platform.test:8000/scroll-animations/css/animation-shorthand.html</div><div style='display: flex;'>
+              <div class='passed'>PASS</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim" should set the property value</div>
+            </div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim timeline" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim none" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim \"initial\"" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim auto" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='passed'>PASS</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim initial" should not set the property value</div>
+            </div><div style='display: flex;'>
+              <div class='passed'>PASS</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim 2000" should not set the property value</div>
+            </div><div style='display: flex;'>
+              <div class='passed'>PASS</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim'</div>
+            </div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim timeline'</div>
+            </div><div class='message'>assert_true: '1s linear 1s 2 reverse forwards paused anim timeline' is a supported value for animation. expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim none'</div>
+            </div><div class='message'>assert_true: '1s linear 1s 2 reverse forwards paused anim none' is a supported value for animation. expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim auto'</div>
+            </div><div class='message'>assert_true: '1s linear 1s 2 reverse forwards paused anim auto' is a supported value for animation. expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-delay</div>
+            </div><div class='message'>assert_equals: animation-delay should be canonical expected "1s, 1s, 1s" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-direction</div>
+            </div><div class='message'>assert_equals: animation-direction should be canonical expected "reverse, reverse, reverse" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-duration</div>
+            </div><div class='message'>assert_equals: animation-duration should be canonical expected "1s, 1s, 1s" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-fill-mode</div>
+            </div><div class='message'>assert_equals: animation-fill-mode should be canonical expected "forwards, forwards, forwards" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-iteration-count</div>
+            </div><div class='message'>assert_equals: animation-iteration-count should be canonical expected "2, 2, 2" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-name</div>
+            </div><div class='message'>assert_equals: animation-name should be canonical expected "anim1, anim2, anim3" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-play-state</div>
+            </div><div class='message'>assert_equals: animation-play-state should be canonical expected "paused, paused, paused" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-timeline</div>
+            </div><div class='message'>assert_equals: animation-timeline should be canonical expected (string) "timeline, none, auto" but got (undefined) undefined</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-timing-function</div>
+            </div><div class='message'>assert_equals: animation-timing-function should be canonical expected "linear, linear, linear" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should not set unrelated longhands</div>
+            </div><div class='message'>assert_true: expected true got false</div><div class='test'>http://web-platform.test:8000/scroll-animations/css/animation-timeline-computed.html</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'initial'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'inherit'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'unset'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'revert'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'none'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'auto, auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'none, none'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'auto, none'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'none, auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"test"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"none"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"auto"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"initial"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"inherit"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"unset"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"revert"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'test'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'test1, test2'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'test1, "test2", none, test3, auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>The animation-timeline property shows up in CSSStyleDeclaration enumeration</div>
+            </div><div class='message'>assert_not_equals: got disallowed value -1</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>The animation-timeline property shows up in CSSStyleDeclaration.cssText</div>
+            </div><div class='message'>assert_not_equals: got disallowed value -1</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll()'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(block)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(inline)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(horizontal)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(vertical)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(root)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(nearest)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(inline nearest)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(vertical root)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div class='test'>http://web-platform.test:8000/scroll-animations/css/animation-timeline-in-keyframe.html</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>The animation-timeline property may not be used in keyframes</div>
+            </div><div class='message'>assert_equals: expected (string) "auto" but got (undefined) undefined</div><div class='browser'>Chrome 101.0</div><div class='test'>http://web-platform.test:8000/scroll-animations/css/animation-shorthand.html</div><div style='display: flex;'>
+              <div class='passed'>PASS</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim" should set the property value</div>
+            </div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim timeline" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim none" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim \"initial\"" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim auto" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='passed'>PASS</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim initial" should not set the property value</div>
+            </div><div style='display: flex;'>
+              <div class='passed'>PASS</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim 2000" should not set the property value</div>
+            </div><div style='display: flex;'>
+              <div class='passed'>PASS</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim'</div>
+            </div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim timeline'</div>
+            </div><div class='message'>assert_true: '1s linear 1s 2 reverse forwards paused anim timeline' is a supported value for animation. expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim none'</div>
+            </div><div class='message'>assert_true: '1s linear 1s 2 reverse forwards paused anim none' is a supported value for animation. expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim auto'</div>
+            </div><div class='message'>assert_true: '1s linear 1s 2 reverse forwards paused anim auto' is a supported value for animation. expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-delay</div>
+            </div><div class='message'>assert_equals: animation-delay should be canonical expected "1s, 1s, 1s" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-direction</div>
+            </div><div class='message'>assert_equals: animation-direction should be canonical expected "reverse, reverse, reverse" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-duration</div>
+            </div><div class='message'>assert_equals: animation-duration should be canonical expected "1s, 1s, 1s" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-fill-mode</div>
+            </div><div class='message'>assert_equals: animation-fill-mode should be canonical expected "forwards, forwards, forwards" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-iteration-count</div>
+            </div><div class='message'>assert_equals: animation-iteration-count should be canonical expected "2, 2, 2" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-name</div>
+            </div><div class='message'>assert_equals: animation-name should be canonical expected "anim1, anim2, anim3" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-play-state</div>
+            </div><div class='message'>assert_equals: animation-play-state should be canonical expected "paused, paused, paused" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-timeline</div>
+            </div><div class='message'>assert_equals: animation-timeline should be canonical expected (string) "timeline, none, auto" but got (undefined) undefined</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-timing-function</div>
+            </div><div class='message'>assert_equals: animation-timing-function should be canonical expected "linear, linear, linear" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should not set unrelated longhands</div>
+            </div><div class='message'>assert_true: expected true got false</div><div class='test'>http://web-platform.test:8000/scroll-animations/css/animation-timeline-computed.html</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'initial'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'inherit'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'unset'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'revert'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'none'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'auto, auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'none, none'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'auto, none'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'none, auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"test"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"none"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"auto"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"initial"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"inherit"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"unset"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"revert"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'test'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'test1, test2'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'test1, "test2", none, test3, auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>The animation-timeline property shows up in CSSStyleDeclaration enumeration</div>
+            </div><div class='message'>assert_not_equals: got disallowed value -1</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>The animation-timeline property shows up in CSSStyleDeclaration.cssText</div>
+            </div><div class='message'>assert_not_equals: got disallowed value -1</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll()'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(block)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(inline)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(horizontal)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(vertical)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(root)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(nearest)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(inline nearest)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(vertical root)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div class='test'>http://web-platform.test:8000/scroll-animations/css/animation-timeline-in-keyframe.html</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>The animation-timeline property may not be used in keyframes</div>
+            </div><div class='message'>assert_equals: expected (string) "auto" but got (undefined) undefined</div><div class='browser'>Chrome 102.0</div><div class='test'>http://web-platform.test:8000/scroll-animations/css/animation-shorthand.html</div><div style='display: flex;'>
+              <div class='passed'>PASS</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim" should set the property value</div>
+            </div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim timeline" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim none" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim \"initial\"" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim auto" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='passed'>PASS</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim initial" should not set the property value</div>
+            </div><div style='display: flex;'>
+              <div class='passed'>PASS</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim 2000" should not set the property value</div>
+            </div><div style='display: flex;'>
+              <div class='passed'>PASS</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim'</div>
+            </div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim timeline'</div>
+            </div><div class='message'>assert_true: '1s linear 1s 2 reverse forwards paused anim timeline' is a supported value for animation. expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim none'</div>
+            </div><div class='message'>assert_true: '1s linear 1s 2 reverse forwards paused anim none' is a supported value for animation. expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim auto'</div>
+            </div><div class='message'>assert_true: '1s linear 1s 2 reverse forwards paused anim auto' is a supported value for animation. expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-delay</div>
+            </div><div class='message'>assert_equals: animation-delay should be canonical expected "1s, 1s, 1s" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-direction</div>
+            </div><div class='message'>assert_equals: animation-direction should be canonical expected "reverse, reverse, reverse" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-duration</div>
+            </div><div class='message'>assert_equals: animation-duration should be canonical expected "1s, 1s, 1s" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-fill-mode</div>
+            </div><div class='message'>assert_equals: animation-fill-mode should be canonical expected "forwards, forwards, forwards" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-iteration-count</div>
+            </div><div class='message'>assert_equals: animation-iteration-count should be canonical expected "2, 2, 2" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-name</div>
+            </div><div class='message'>assert_equals: animation-name should be canonical expected "anim1, anim2, anim3" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-play-state</div>
+            </div><div class='message'>assert_equals: animation-play-state should be canonical expected "paused, paused, paused" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-timeline</div>
+            </div><div class='message'>assert_equals: animation-timeline should be canonical expected (string) "timeline, none, auto" but got (undefined) undefined</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-timing-function</div>
+            </div><div class='message'>assert_equals: animation-timing-function should be canonical expected "linear, linear, linear" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should not set unrelated longhands</div>
+            </div><div class='message'>assert_true: expected true got false</div><div class='test'>http://web-platform.test:8000/scroll-animations/css/animation-timeline-computed.html</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'initial'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'inherit'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'unset'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'revert'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'none'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'auto, auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'none, none'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'auto, none'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'none, auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"test"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"none"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"auto"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"initial"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"inherit"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"unset"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"revert"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'test'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'test1, test2'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'test1, "test2", none, test3, auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>The animation-timeline property shows up in CSSStyleDeclaration enumeration</div>
+            </div><div class='message'>assert_not_equals: got disallowed value -1</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>The animation-timeline property shows up in CSSStyleDeclaration.cssText</div>
+            </div><div class='message'>assert_not_equals: got disallowed value -1</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll()'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(block)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(inline)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(horizontal)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(vertical)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(root)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(nearest)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(inline nearest)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(vertical root)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div class='test'>http://web-platform.test:8000/scroll-animations/css/animation-timeline-in-keyframe.html</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>The animation-timeline property may not be used in keyframes</div>
+            </div><div class='message'>assert_equals: expected (string) "auto" but got (undefined) undefined</div><div class='browser'>Safari (iOS) 15.6</div><div class='test'>http://web-platform.test:8000/scroll-animations/css/animation-shorthand.html</div><div style='display: flex;'>
+              <div class='passed'>PASS</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim" should set the property value</div>
+            </div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim timeline" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim none" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim \"initial\"" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim auto" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='passed'>PASS</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim initial" should not set the property value</div>
+            </div><div style='display: flex;'>
+              <div class='passed'>PASS</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim 2000" should not set the property value</div>
+            </div><div style='display: flex;'>
+              <div class='passed'>PASS</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim'</div>
+            </div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim timeline'</div>
+            </div><div class='message'>assert_true: '1s linear 1s 2 reverse forwards paused anim timeline' is a supported value for animation. expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim none'</div>
+            </div><div class='message'>assert_true: '1s linear 1s 2 reverse forwards paused anim none' is a supported value for animation. expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim auto'</div>
+            </div><div class='message'>assert_true: '1s linear 1s 2 reverse forwards paused anim auto' is a supported value for animation. expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-delay</div>
+            </div><div class='message'>assert_equals: animation-delay should be canonical expected "1s, 1s, 1s" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-direction</div>
+            </div><div class='message'>assert_equals: animation-direction should be canonical expected "reverse, reverse, reverse" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-duration</div>
+            </div><div class='message'>assert_equals: animation-duration should be canonical expected "1s, 1s, 1s" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-fill-mode</div>
+            </div><div class='message'>assert_equals: animation-fill-mode should be canonical expected "forwards, forwards, forwards" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-iteration-count</div>
+            </div><div class='message'>assert_equals: animation-iteration-count should be canonical expected "2, 2, 2" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-name</div>
+            </div><div class='message'>assert_equals: animation-name should be canonical expected "anim1, anim2, anim3" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-play-state</div>
+            </div><div class='message'>assert_equals: animation-play-state should be canonical expected "paused, paused, paused" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-timeline</div>
+            </div><div class='message'>assert_equals: animation-timeline should be canonical expected (string) "timeline, none, auto" but got (undefined) undefined</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-timing-function</div>
+            </div><div class='message'>assert_equals: animation-timing-function should be canonical expected "linear, linear, linear" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should not set unrelated longhands</div>
+            </div><div class='message'>assert_true: expected true got false</div><div class='test'>http://web-platform.test:8000/scroll-animations/css/animation-timeline-computed.html</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'initial'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'inherit'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'unset'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'revert'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'none'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'auto, auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'none, none'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'auto, none'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'none, auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"test"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"none"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"auto"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"initial"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"inherit"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"unset"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"revert"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'test'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'test1, test2'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'test1, "test2", none, test3, auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>The animation-timeline property shows up in CSSStyleDeclaration enumeration</div>
+            </div><div class='message'>assert_not_equals: got disallowed value -1</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>The animation-timeline property shows up in CSSStyleDeclaration.cssText</div>
+            </div><div class='message'>assert_not_equals: got disallowed value -1</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll()'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(block)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(inline)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(horizontal)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(vertical)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(root)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(nearest)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(inline nearest)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(vertical root)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div class='test'>http://web-platform.test:8000/scroll-animations/css/animation-timeline-in-keyframe.html</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>The animation-timeline property may not be used in keyframes</div>
+            </div><div class='message'>assert_equals: expected (string) "auto" but got (undefined) undefined</div><div class='browser'>Firefox 69.0</div><div class='test'>http://web-platform.test:8000/scroll-animations/css/animation-shorthand.html</div><div style='display: flex;'>
+              <div class='passed'>PASS</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim" should set the property value</div>
+            </div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim timeline" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim none" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim \"initial\"" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim auto" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='passed'>PASS</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim initial" should not set the property value</div>
+            </div><div style='display: flex;'>
+              <div class='passed'>PASS</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim 2000" should not set the property value</div>
+            </div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim'</div>
+            </div><div class='message'>assert_equals: expected "1s linear 1s 2 reverse forwards paused anim" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim timeline'</div>
+            </div><div class='message'>assert_true: '1s linear 1s 2 reverse forwards paused anim timeline' is a supported value for animation. expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim none'</div>
+            </div><div class='message'>assert_true: '1s linear 1s 2 reverse forwards paused anim none' is a supported value for animation. expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim auto'</div>
+            </div><div class='message'>assert_true: '1s linear 1s 2 reverse forwards paused anim auto' is a supported value for animation. expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-delay</div>
+            </div><div class='message'>assert_equals: animation-delay should be canonical expected "1s, 1s, 1s" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-direction</div>
+            </div><div class='message'>assert_equals: animation-direction should be canonical expected "reverse, reverse, reverse" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-duration</div>
+            </div><div class='message'>assert_equals: animation-duration should be canonical expected "1s, 1s, 1s" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-fill-mode</div>
+            </div><div class='message'>assert_equals: animation-fill-mode should be canonical expected "forwards, forwards, forwards" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-iteration-count</div>
+            </div><div class='message'>assert_equals: animation-iteration-count should be canonical expected "2, 2, 2" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-name</div>
+            </div><div class='message'>assert_equals: animation-name should be canonical expected "anim1, anim2, anim3" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-play-state</div>
+            </div><div class='message'>assert_equals: animation-play-state should be canonical expected "paused, paused, paused" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-timeline</div>
+            </div><div class='message'>assert_equals: animation-timeline should be canonical expected (string) "timeline, none, auto" but got (undefined) undefined</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-timing-function</div>
+            </div><div class='message'>assert_equals: animation-timing-function should be canonical expected "linear, linear, linear" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should not set unrelated longhands</div>
+            </div><div class='message'>assert_true: expected true got false</div><div class='test'>http://web-platform.test:8000/scroll-animations/css/animation-timeline-computed.html</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'initial'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'inherit'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'unset'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'revert'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'none'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'auto, auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'none, none'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'auto, none'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'none, auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"test"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"none"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"auto"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"initial"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"inherit"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"unset"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"revert"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'test'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'test1, test2'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'test1, "test2", none, test3, auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>The animation-timeline property shows up in CSSStyleDeclaration enumeration</div>
+            </div><div class='message'>assert_not_equals: got disallowed value -1</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>The animation-timeline property shows up in CSSStyleDeclaration.cssText</div>
+            </div><div class='message'>assert_not_equals: got disallowed value -1</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll()'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(block)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(inline)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(horizontal)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(vertical)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(root)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(nearest)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(inline nearest)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(vertical root)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div class='test'>http://web-platform.test:8000/scroll-animations/css/animation-timeline-in-keyframe.html</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>The animation-timeline property may not be used in keyframes</div>
+            </div><div class='message'>assert_equals: expected (string) "auto" but got (undefined) undefined</div><div class='browser'>Firefox 70.0</div><div class='test'>http://web-platform.test:8000/scroll-animations/css/animation-shorthand.html</div><div style='display: flex;'>
+              <div class='passed'>PASS</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim" should set the property value</div>
+            </div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim timeline" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim none" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim \"initial\"" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim auto" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='passed'>PASS</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim initial" should not set the property value</div>
+            </div><div style='display: flex;'>
+              <div class='passed'>PASS</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim 2000" should not set the property value</div>
+            </div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim'</div>
+            </div><div class='message'>assert_equals: expected "1s linear 1s 2 reverse forwards paused anim" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim timeline'</div>
+            </div><div class='message'>assert_true: '1s linear 1s 2 reverse forwards paused anim timeline' is a supported value for animation. expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim none'</div>
+            </div><div class='message'>assert_true: '1s linear 1s 2 reverse forwards paused anim none' is a supported value for animation. expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim auto'</div>
+            </div><div class='message'>assert_true: '1s linear 1s 2 reverse forwards paused anim auto' is a supported value for animation. expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-delay</div>
+            </div><div class='message'>assert_equals: animation-delay should be canonical expected "1s, 1s, 1s" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-direction</div>
+            </div><div class='message'>assert_equals: animation-direction should be canonical expected "reverse, reverse, reverse" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-duration</div>
+            </div><div class='message'>assert_equals: animation-duration should be canonical expected "1s, 1s, 1s" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-fill-mode</div>
+            </div><div class='message'>assert_equals: animation-fill-mode should be canonical expected "forwards, forwards, forwards" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-iteration-count</div>
+            </div><div class='message'>assert_equals: animation-iteration-count should be canonical expected "2, 2, 2" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-name</div>
+            </div><div class='message'>assert_equals: animation-name should be canonical expected "anim1, anim2, anim3" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-play-state</div>
+            </div><div class='message'>assert_equals: animation-play-state should be canonical expected "paused, paused, paused" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-timeline</div>
+            </div><div class='message'>assert_equals: animation-timeline should be canonical expected (string) "timeline, none, auto" but got (undefined) undefined</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-timing-function</div>
+            </div><div class='message'>assert_equals: animation-timing-function should be canonical expected "linear, linear, linear" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should not set unrelated longhands</div>
+            </div><div class='message'>assert_true: expected true got false</div><div class='test'>http://web-platform.test:8000/scroll-animations/css/animation-timeline-computed.html</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'initial'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'inherit'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'unset'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'revert'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'none'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'auto, auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'none, none'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'auto, none'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'none, auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"test"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"none"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"auto"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"initial"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"inherit"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"unset"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"revert"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'test'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'test1, test2'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'test1, "test2", none, test3, auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>The animation-timeline property shows up in CSSStyleDeclaration enumeration</div>
+            </div><div class='message'>assert_not_equals: got disallowed value -1</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>The animation-timeline property shows up in CSSStyleDeclaration.cssText</div>
+            </div><div class='message'>assert_not_equals: got disallowed value -1</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll()'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(block)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(inline)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(horizontal)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(vertical)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(root)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(nearest)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(inline nearest)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(vertical root)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div class='test'>http://web-platform.test:8000/scroll-animations/css/animation-timeline-in-keyframe.html</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>The animation-timeline property may not be used in keyframes</div>
+            </div><div class='message'>assert_equals: expected (string) "auto" but got (undefined) undefined</div><div class='browser'>Firefox 71.0</div><div class='test'>http://web-platform.test:8000/scroll-animations/css/animation-shorthand.html</div><div style='display: flex;'>
+              <div class='passed'>PASS</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim" should set the property value</div>
+            </div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim timeline" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim none" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim \"initial\"" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim auto" should set the property value</div>
+            </div><div class='message'>assert_not_equals: property should be set got disallowed value ""</div><div style='display: flex;'>
+              <div class='passed'>PASS</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim initial" should not set the property value</div>
+            </div><div style='display: flex;'>
+              <div class='passed'>PASS</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim 2000" should not set the property value</div>
+            </div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim'</div>
+            </div><div class='message'>assert_equals: expected "1s linear 1s 2 reverse forwards paused anim" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim timeline'</div>
+            </div><div class='message'>assert_true: '1s linear 1s 2 reverse forwards paused anim timeline' is a supported value for animation. expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim none'</div>
+            </div><div class='message'>assert_true: '1s linear 1s 2 reverse forwards paused anim none' is a supported value for animation. expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation value '1s linear 1s 2 reverse forwards paused anim auto'</div>
+            </div><div class='message'>assert_true: '1s linear 1s 2 reverse forwards paused anim auto' is a supported value for animation. expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-delay</div>
+            </div><div class='message'>assert_equals: animation-delay should be canonical expected "1s, 1s, 1s" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-direction</div>
+            </div><div class='message'>assert_equals: animation-direction should be canonical expected "reverse, reverse, reverse" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-duration</div>
+            </div><div class='message'>assert_equals: animation-duration should be canonical expected "1s, 1s, 1s" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-fill-mode</div>
+            </div><div class='message'>assert_equals: animation-fill-mode should be canonical expected "forwards, forwards, forwards" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-iteration-count</div>
+            </div><div class='message'>assert_equals: animation-iteration-count should be canonical expected "2, 2, 2" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-name</div>
+            </div><div class='message'>assert_equals: animation-name should be canonical expected "anim1, anim2, anim3" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-play-state</div>
+            </div><div class='message'>assert_equals: animation-play-state should be canonical expected "paused, paused, paused" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-timeline</div>
+            </div><div class='message'>assert_equals: animation-timeline should be canonical expected (string) "timeline, none, auto" but got (undefined) undefined</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should set animation-timing-function</div>
+            </div><div class='message'>assert_equals: animation-timing-function should be canonical expected "linear, linear, linear" but got ""</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>e.style['animation'] = "1s linear 1s 2 reverse forwards paused anim1 timeline,\n   1s linear 1s 2 reverse forwards paused anim2 none,\n   1s linear 1s 2 reverse forwards paused anim3 auto" should not set unrelated longhands</div>
+            </div><div class='message'>assert_true: expected true got false</div><div class='test'>http://web-platform.test:8000/scroll-animations/css/animation-timeline-computed.html</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'initial'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'inherit'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'unset'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'revert'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'none'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'auto, auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'none, none'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'auto, none'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'none, auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"test"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"none"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"auto"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"initial"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"inherit"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"unset"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value '"revert"'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'test'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'test1, test2'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'test1, "test2", none, test3, auto'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>The animation-timeline property shows up in CSSStyleDeclaration enumeration</div>
+            </div><div class='message'>assert_not_equals: got disallowed value -1</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>The animation-timeline property shows up in CSSStyleDeclaration.cssText</div>
+            </div><div class='message'>assert_not_equals: got disallowed value -1</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll()'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(block)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(inline)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(horizontal)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(vertical)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(root)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(nearest)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(inline nearest)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>Property animation-timeline value 'scroll(vertical root)'</div>
+            </div><div class='message'>assert_true: animation-timeline doesn't seem to be supported in the computed style expected true got false</div><div class='test'>http://web-platform.test:8000/scroll-animations/css/animation-timeline-in-keyframe.html</div><div style='display: flex;'>
+              <div class='failed'>FAIL</div>
+              <div class='subtest'>The animation-timeline property may not be used in keyframes</div>
+            </div><div class='message'>assert_equals: expected (string) "auto" but got (undefined) undefined</div>
+    </div>
+
+    </body>
+    </html>
