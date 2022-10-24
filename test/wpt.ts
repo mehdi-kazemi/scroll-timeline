@@ -510,6 +510,7 @@ async function main() {
 
     console.log(resultJson);
     writeFileSync(`${testResultsFolder}/${fileName}.json`, resultJson);
+    createHtmlResultPage(results, testResultsFolder, fileName);
 
     /*
     var rows = "";
@@ -540,6 +541,71 @@ async function main() {
   } finally {
     await stopLocalServer(server);
   }
+}
+
+function createHtmlResultPage(results: BrowserDefinition[],
+  testResultsFolder: string, fileName: string) {
+  let cssStyle = `#container{
+      display: flex;
+    }
+
+    .box {
+      width: 110px;
+      height: 50px;
+      background-color: beige;
+      margin: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .title {
+      width: 110px;
+      height: 50px;
+      margin: 5px;
+      background-color: white;
+      border: 1px solid black;
+      border-radius: 3px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }`;
+
+  let columns = "";
+
+  for(let browser of results) {
+    let col = `
+    <div>
+      <div class="title">${browser.name}</div>
+      ${
+        browser.versions.map(v => {
+          const passed = v.data.result[0];
+          const failed = v.data.result[1];
+          const total = passed + failed;
+          return `<div class="box">${v.name} <br> ${passed} / ${total}</div>`;
+        }).join(" ")
+      }
+    </div>`;
+
+    columns += col;
+  }
+
+  let html = `<!doctype html>
+      <html lang="en">
+      <head>
+        <title>Test Results</title>
+        <style>${cssStyle}</style>
+      </head>
+      <body>
+
+      <div id="container">
+      ${columns}
+      </div>
+
+      </body>
+      </html>`;
+
+  writeFileSync(`${testResultsFolder}/${fileName}.html`, html);
 }
 
 try {
