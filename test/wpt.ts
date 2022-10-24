@@ -223,7 +223,7 @@ const IE_DEFINITION: BrowserDefinition = {
   logo: 'https://unpkg.com/@browser-logos/internet-explorer_9-11@1.1.16/internet-explorer_9-11.svg',
   versions: [/*'9', '10', '11'*/].map(browserVersion => ({
     name: browserVersion,
-    data: {type: DataType.Result, result: [0, 0]},
+    data: {type: DataType.Result, result: [0, 0], details: []},
   })),
 };
 
