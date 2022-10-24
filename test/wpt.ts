@@ -574,16 +574,18 @@ function createHtmlResultPageDetails(results: any,
       for(let test of version.data.details) {
         content += `<div class='test'>${test[0]}</div>`;
 
-        for(let subtest of test[1].tests) {
-          const passed = subtest.status == subtest.PASS;
+        if (Array.isArray(test) && Array.isArray(test[1].tests)) {
+          for(let subtest of test[1].tests) {
+            const passed = subtest.status == subtest.PASS;
 
-          content += `<div style='display: flex;'>
-              <div class='${passed ? 'passed' : 'failed'}'>${passed ? 'PASS' : 'FAIL'}</div>
-              <div class='subtest'>${subtest.name}</div>
-            </div>`;
+            content += `<div style='display: flex;'>
+                <div class='${passed ? 'passed' : 'failed'}'>${passed ? 'PASS' : 'FAIL'}</div>
+                <div class='subtest'>${subtest.name}</div>
+              </div>`;
 
-          if(!passed)
-            content += `<div class='message'>${subtest.message}</div>`;
+            if(!passed)
+              content += `<div class='message'>${subtest.message}</div>`;
+          }
         }
       }
     }
