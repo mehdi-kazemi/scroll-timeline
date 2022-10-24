@@ -47,11 +47,32 @@ interface BrowserDefinition {
   versions: BrowserVersion[];
 }
 
-/* test selection */
+interface Subtest {
+  name: string;
+  status: number;
+  PASS: number;
+  PRECONDITION_FAILED: number;
+}
+
+interface TestResult {
+  0: string;
+  1: {
+    tests: Array<Subtest>;
+  };
+}
+
+type TestSuite = {
+  js: string[];
+  iframe: Array<[string, string]>;
+};
+
+/**********************************/
+/****** TEST SELECTION ************/
+/**********************************/
 const TEST_FOLDERS: Array<string> = [
   "scroll-animations\/css",
-  // "scroll-animations\/scroll-timelines",
-  // "scroll-animations\/view-timelines",
+  "scroll-animations\/scroll-timelines",
+  "scroll-animations\/view-timelines",
 ];
 
 const TEST_FILTERS = TEST_FOLDERS.map(folder => new RegExp(folder));
@@ -67,12 +88,14 @@ const SUBTEST_FILTERS: Array<RegExp> = [
 //   /ch relative/,
 ];
 
-/* browser selection */
+/**********************************/
+/****** BROWSER SELECTION *********/
+/**********************************/
 const CHROME_DEFINITION: BrowserDefinition = {
   name: 'Chrome',
   logo: 'https://unpkg.com/@browser-logos/chrome@2.0.0/chrome.svg',
-  versions: Array.from({length: 3})
-    .map((_, i) => 100 + i)
+  versions: Array.from({length: 1})
+    .map((_, i) => 104 + i)
     .filter(version => ![82].includes(version))
     .map(version => `${version}.0`)
     .map(browserVersion => ({
@@ -239,25 +262,6 @@ const BROWSERS: BrowserDefinition[] = [
   // IE_DEFINITION,
 ];
 
-interface Subtest {
-  name: string;
-  status: number;
-  PASS: number;
-  PRECONDITION_FAILED: number;
-}
-
-interface TestResult {
-  0: string;
-  1: {
-    tests: Array<Subtest>;
-  };
-}
-
-type TestSuite = {
-  js: string[];
-  iframe: Array<[string, string]>;
-};
-
 function createLocalServer(): Promise<Local> {
   return new Promise((resolve, reject) => {
     const server = new Local();
@@ -319,9 +323,9 @@ async function getTests(manifestPath: string): Promise<TestSuite> {
   }
 
   return {
-    js: js.slice(0, 3), // Reducing the number of tests for now
-    iframe : [] // Reducing the number of tests for now
-    // js, iframe
+    // js: js.slice(0, 3), // Reducing the number of tests for now
+    // iframe : [] // Reducing the number of tests for now
+    js, iframe
   };
 }
 
