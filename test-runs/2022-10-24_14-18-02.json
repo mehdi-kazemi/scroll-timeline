@@ -1,0 +1,99 @@
+[
+  {
+    "name": "Chrome",
+    "logo": "https://unpkg.com/@browser-logos/chrome@2.0.0/chrome.svg",
+    "versions": [
+      {
+        "name": "100.0",
+        "data": {
+          "type": 1,
+          "result": [
+            4,
+            49
+          ]
+        }
+      },
+      {
+        "name": "101.0",
+        "data": {
+          "type": 1,
+          "result": [
+            4,
+            49
+          ]
+        }
+      },
+      {
+        "name": "102.0",
+        "data": {
+          "type": 1,
+          "result": [
+            4,
+            49
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Safari (iOS)",
+    "logo": "https://unpkg.com/@browser-logos/safari-ios@1.0.15/safari-ios.svg",
+    "versions": []
+  },
+  {
+    "name": "Safari (macOS)",
+    "logo": "https://unpkg.com/@browser-logos/safari-ios@1.0.15/safari-ios.svg",
+    "versions": []
+  },
+  {
+    "name": "Edge",
+    "logo": "https://unpkg.com/@browser-logos/edge@2.0.5/edge.svg",
+    "versions": []
+  },
+  {
+    "name": "Firefox",
+    "logo": "https://unpkg.com/@browser-logos/firefox@3.0.9/firefox.svg",
+    "versions": [
+      {
+        "name": "69.0",
+        "data": {
+          "type": 1,
+          "result": [
+            3,
+            50
+          ]
+        }
+      },
+      {
+        "name": "70.0",
+        "data": {
+          "type": 1,
+          "result": [
+            3,
+            50
+          ]
+        }
+      },
+      {
+        "name": "71.0",
+        "data": {
+          "type": 1,
+          "result": [
+            0,
+            0
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Samsung Internet",
+    "logo": "https://unpkg.com/@browser-logos/samsung-internet@4.0.6/samsung-internet.svg",
+    "versions": []
+  },
+  {
+    "name": "Internet Explorer",
+    "logo": "https://unpkg.com/@browser-logos/internet-explorer_9-11@1.1.16/internet-explorer_9-11.svg",
+    "versions": []
+  }
+]
