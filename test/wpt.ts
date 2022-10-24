@@ -231,12 +231,12 @@ const IE_DEFINITION: BrowserDefinition = {
 
 const BROWSERS: BrowserDefinition[] = [
   CHROME_DEFINITION,
-  SAFARI_IOS_DEFINITION,
-  SAFARI_MACOS_DEFINITION,
-  EDGE_DEFINITION,
-  FIREFOX_DEFINITION,
-  SAMSUNG_INTERNET_DEFINITION,
-  IE_DEFINITION,
+  // SAFARI_IOS_DEFINITION,
+  // SAFARI_MACOS_DEFINITION,
+  // EDGE_DEFINITION,
+  // FIREFOX_DEFINITION,
+  // SAMSUNG_INTERNET_DEFINITION,
+  // IE_DEFINITION,
 ];
 
 interface Subtest {
@@ -433,6 +433,8 @@ async function main() {
   if (!manifestPath) {
     throw new Error('invariant: WPT_MANIFEST environment variable must be set');
   }
+
+  console.info("manifestPath " + manifestPath);
   
   const testSuite = await getTests(manifestPath);
   console.info(`Using tests: ${JSON.stringify(testSuite, null, 4)}`);
