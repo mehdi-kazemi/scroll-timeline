@@ -47,6 +47,7 @@ interface BrowserDefinition {
   versions: BrowserVersion[];
 }
 
+/* test selection */
 const TEST_FOLDERS: Array<string> = [
   "scroll-animations\/css",
   // "scroll-animations\/scroll-timelines",
@@ -66,6 +67,7 @@ const SUBTEST_FILTERS: Array<RegExp> = [
 //   /ch relative/,
 ];
 
+/* browser selection */
 const CHROME_DEFINITION: BrowserDefinition = {
   name: 'Chrome',
   logo: 'https://unpkg.com/@browser-logos/chrome@2.0.0/chrome.svg',
@@ -101,7 +103,7 @@ const SAFARI_IOS_DEFINITION: BrowserDefinition = {
       // ['15.2', '15'],
       // ['15.4', '15'],
       // ['15.5', '15'],
-      // ['15.6', '15'],
+      ['15.6', '15'],
     ] as Array<[string, string]>
   ).map(([browserVersion, osVersion]) => ({
     name: browserVersion,
