@@ -282,8 +282,6 @@ function stopLocalServer(server: Local): Promise<void> {
 
 function getValue(obj: any, path: string) {
   const paths = path.split('\/');
-  // console.info(`paths => ${paths}`);
-
   for (var i=0, len=paths.length; i<len; i++)
     obj = obj[paths[i]];
   return obj;
@@ -297,14 +295,10 @@ async function getTests(manifestPath: string): Promise<TestSuite> {
   const iframe: Array<[string, string]> = [];
 
   for(let folder_path of TEST_FOLDERS) {
-    // console.info(`folder_path => ${folder_path}`);
-
     const htmlTests = getValue(manifest.items.testharness, folder_path);
     const refTests = getValue(manifest.items.reftest, folder_path);
 
     if(refTests) {
-      // console.info(`refTests: ${JSON.stringify(refTests)}`);
-
       Object.keys(refTests).forEach(name => {
         const data = refTests[name][1][1][0];
         iframe.push(
@@ -315,8 +309,6 @@ async function getTests(manifestPath: string): Promise<TestSuite> {
     }
 
     if(htmlTests) {
-      // console.info(`htmlTests: ${JSON.stringify(htmlTests)}`);
-
       Object.keys(htmlTests)
         .filter(name => !TEST_FILTERS.some(filter => filter.test(name)))
         .map(name => `http://web-platform.test:8000/${folder_path}/${name}`)
@@ -440,12 +432,9 @@ async function main() {
     throw new Error('invariant: WPT_MANIFEST environment variable must be set');
   }
   
-
   const testSuite = await getTests(manifestPath);
   console.info(`Using tests: ${JSON.stringify(testSuite, null, 4)}`);
   
-  // console.info(`BROWSERS: ${JSON.stringify(BROWSERS)}`);
-
   const tests: Array<() => Promise<void>> = [];
   const results: BrowserDefinition[] = BROWSERS.map(browser => ({
     ...browser,
@@ -469,9 +458,6 @@ async function main() {
               ),
             () => []
           );
-          
-          // console.info(`results: ${results.length}`);
-          // console.info(`results: ${JSON.stringify(results)}`);
 
           let passed = 0;
           let failed = 0;
@@ -502,7 +488,6 @@ async function main() {
   const server = await createLocalServer();
   try {
     await eachLimit(tests, 5, async test => await test());
-    console.info(`results.length=${results.length}`);
     const resultJson = JSON.stringify(results, null, 2);
 
     const testResultsFolder = "test-runs";
@@ -510,37 +495,9 @@ async function main() {
     if(!existsSync(testResultsFolder))
       mkdirSync(testResultsFolder);
 
-    console.log(resultJson);
     writeFileSync(`${testResultsFolder}/${fileName}.json`, resultJson);
     createHtmlResultPage(results, testResultsFolder, fileName);
     createHtmlResultPageDetails(results, testResultsFolder, fileName);
-
-    /*
-    var rows = "";
-    readdirSync(process.cwd() + "/test-runs").sort((a: any, b: any) => (a > b ? -1 : 1))
-      .forEach( (file: any) => {
-        console.log("> " + file);
-        rows += `<li><a href="test-runs/${file}">test-runs/${file}</a></li>`;
-      });
-
-      var html = `
-      <!doctype html>
-      <html lang="en">
-      <head>
-          <title>Test Results</title>
-      </head>
-      <body>
-      <ul>
-      ${rows}
-      </ul>
-      </body>
-      </html>`;
-*/
-      // TODO: don't create this file yet!
-      // Each push should create it from scratch, from all of the existing files,
-      // then overwrites it, and pushes it so the github pages is kept up-to-date.
-      // writeFileSync("test-runs.html", html);
-
   } finally {
     await stopLocalServer(server);
   }
