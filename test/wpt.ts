@@ -19,7 +19,7 @@ import {Builder, By, until} from 'selenium-webdriver';
 import {Local} from 'browserstack-local';
 
 import { TestResult, BrowserDefinition, BrowserVersion, DataType } from "./data_types";
-import { BROWSERS } from './browser_selection';
+import { BROWSERS } from "./data_types";
 
 const TEST_FOLDERS: Array<string> = [
   "scroll-animations\/css",
