@@ -548,8 +548,6 @@ async function main() {
 
 function createHtmlResultPageDetails(results: any,
   testResultsFolder: string, fileName: string) {
-  
-  let cssStyle = '';
 
   let content = "";
   for(let browser of results) {
@@ -558,13 +556,13 @@ function createHtmlResultPageDetails(results: any,
       content += `<div>${name}</div>`;
       for(let test of version.data.details) {
         content += `<div>${test[0]}</div>`;
-        for(let subtest of test[1]) {
+        for(let subtest of test[1].tests) {
           content += `<div>${subtest.name}</div>`;
 
           if(subtest.status == subtest.PASS) {
             content += `<div>PASSED</div>`;
           } else {
-            content += `<div>PASSED</div>`;
+            content += `<div>FAILED</div>`;
             content += `<div>${subtest.message}</div>`;
           }
         }
@@ -576,7 +574,6 @@ function createHtmlResultPageDetails(results: any,
     <html lang="en">
     <head>
       <title>Test Results</title>
-      <style>${cssStyle}</style>
     </head>
     <body>
 
