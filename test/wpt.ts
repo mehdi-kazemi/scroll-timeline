@@ -28,6 +28,7 @@ const enum DataType {
 interface ResultData {
   type: DataType.Result;
   result: [number, number];
+  details: Array<TestResult>;
 }
 
 interface FetchDescriptorData {
@@ -490,7 +491,8 @@ async function main() {
             }
           }
 
-          result.data = {type: DataType.Result, result: [passed, failed]};
+          result.data = {type: DataType.Result, result: [passed, failed],
+            details: results};
         }
       });
       return result;
