@@ -513,6 +513,7 @@ async function main() {
     console.log(resultJson);
     writeFileSync(`${testResultsFolder}/${fileName}.json`, resultJson);
     createHtmlResultPage(results, testResultsFolder, fileName);
+    createHtmlResultPageDetails(results, testResultsFolder, fileName);
 
     /*
     var rows = "";
@@ -543,6 +544,50 @@ async function main() {
   } finally {
     await stopLocalServer(server);
   }
+}
+
+function createHtmlResultPageDetails(results: any,
+  testResultsFolder: string, fileName: string) {
+  
+  let cssStyle = '';
+
+  let content = "";
+  for(let browser of results) {
+    for(let version of browser.versions) {
+      const name = browser.name + " " + version.name;
+      content += `<div>${name}</div>`;
+      for(let test of version.data.details) {
+        content += `<div>${test[0]}</div>`;
+        for(let subtest of test[1]) {
+          content += `<div>${subtest.name}</div>`;
+
+          if(subtest.status == subtest.PASS) {
+            content += `<div>PASSED</div>`;
+          } else {
+            content += `<div>PASSED</div>`;
+            content += `<div>${subtest.message}</div>`;
+          }
+        }
+      }
+    }
+  }
+
+  let html = `<!doctype html>
+    <html lang="en">
+    <head>
+      <title>Test Results</title>
+      <style>${cssStyle}</style>
+    </head>
+    <body>
+
+    <div>
+    ${content}
+    </div>
+
+    </body>
+    </html>`;
+
+  writeFileSync(`${testResultsFolder}/${fileName}-details.html`, html);
 }
 
 function createHtmlResultPage(results: any,
@@ -583,8 +628,6 @@ function createHtmlResultPage(results: any,
         browser.versions.map((v: any) => {
           const passed = v.data.result[0];
           const failed = v.data.result[1];
-          // const passed = 10;
-          // const failed = 7;
           const total = passed + failed;
           return `<div class="box">${v.name} <br> ${passed} / ${total}</div>`;
         }).join(" ")
