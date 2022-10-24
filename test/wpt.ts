@@ -549,22 +549,76 @@ async function main() {
 function createHtmlResultPageDetails(results: any,
   testResultsFolder: string, fileName: string) {
 
+  const cssStyle = `body {
+    width: 2000px;
+  }
+
+  .browser {
+    background-color: beige;
+    border: 1px solid gray;
+    border-radius: 3px;
+    margin-top: 10px;
+    padding: 5px;
+  }
+
+  .test {
+    border: 1px solid gray;
+    padding: 5px;
+    border-radius: 3px;
+    margin-top: 5px;
+  }
+
+  .passed {
+    width: 50px;
+    background-color: green;
+    color: white;
+    border-radius: 3px;
+    padding: 3px;
+    margin-top: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .failed {
+    width: 50px;
+    background-color: #DC143C;
+    color: white;
+    border-radius: 3px;
+    padding: 3px;
+    margin-top: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .message {
+    margin-left: 60px;
+  }
+
+  .subtest {
+    padding: 3px;
+    margin-top: 2px;
+  }`;
+
   let content = "";
   for(let browser of results) {
     for(let version of browser.versions) {
       const name = browser.name + " " + version.name;
-      content += `<div>${name}</div>`;
+      content += `<div class='browser'>${name}</div>`;
       for(let test of version.data.details) {
-        content += `<div>${test[0]}</div>`;
-        for(let subtest of test[1].tests) {
-          content += `<div>${subtest.name}</div>`;
+        content += `<div class='test'>${test[0]}</div>`;
 
-          if(subtest.status == subtest.PASS) {
-            content += `<div>PASSED</div>`;
-          } else {
-            content += `<div>FAILED</div>`;
-            content += `<div>${subtest.message}</div>`;
-          }
+        for(let subtest of test[1].tests) {
+          const passed = subtest.status == subtest.PASS;
+
+          content += `<div style='display: flex;'>
+              <div class='${passed ? 'passed' : 'failed'}'>${passed ? 'PASS' : 'FAIL'}</div>
+              <div class='subtest'>${subtest.name}</div>
+            </div>`;
+
+          if(!passed)
+            content += `<div class='message'>${subtest.message}</div>`;
         }
       }
     }
@@ -574,6 +628,7 @@ function createHtmlResultPageDetails(results: any,
     <html lang="en">
     <head>
       <title>Test Results</title>
+      <style>${cssStyle}</style>
     </head>
     <body>
 
