@@ -144,6 +144,29 @@ const SAFARI_IOS_DEFINITION: BrowserDefinition = {
   })),
 };
 
+const CHROME_IOS_DEFINITION: BrowserDefinition = {
+  name: 'Chrome (iOS)',
+  logo: 'https://unpkg.com/@browser-logos/chrome@2.0.0/chrome.svg',
+  versions: (
+    [
+      ['15.6', '15'],
+    ] as Array<[string, string]>
+  ).map(([browserVersion, osVersion]) => ({
+    name: browserVersion,
+    data: {
+      type: DataType.FetchDescriptor,
+      capabilities: {
+        'bstack:options': {
+          deviceName: 'iPhone 11',
+          osVersion,
+        },
+        browserName: 'Chrome',
+        browserVersion,
+      },
+    },
+  })),
+};
+
 const SAFARI_MACOS_DEFINITION: BrowserDefinition = {
   name: 'Safari (macOS)',
   logo: 'https://unpkg.com/@browser-logos/safari-ios@1.0.15/safari-ios.svg',
@@ -254,6 +277,7 @@ const IE_DEFINITION: BrowserDefinition = {
 
 const BROWSERS: BrowserDefinition[] = [
   CHROME_DEFINITION,
+  CHROME_IOS_DEFINITION,
   // SAFARI_IOS_DEFINITION,
   // SAFARI_MACOS_DEFINITION,
   // EDGE_DEFINITION,
