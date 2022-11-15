@@ -149,7 +149,7 @@ const CHROME_IOS_DEFINITION: BrowserDefinition = {
   logo: 'https://unpkg.com/@browser-logos/chrome@2.0.0/chrome.svg',
   versions: (
     [
-      ['15.6', '15'],
+      ['106', '15'],
     ] as Array<[string, string]>
   ).map(([browserVersion, osVersion]) => ({
     name: browserVersion,
@@ -237,7 +237,7 @@ const EDGE_DEFINITION: BrowserDefinition = {
 };
 
 const FIREFOX_WINDOWS_DEFINITION: BrowserDefinition = {
-  name: 'Firefox',
+  name: 'Firefox Windows',
   logo: 'https://unpkg.com/@browser-logos/firefox@3.0.9/firefox.svg',
   versions: Array.from({length: 1 /*101 - 69*/})
     .map((_, i) => 104 + i)
