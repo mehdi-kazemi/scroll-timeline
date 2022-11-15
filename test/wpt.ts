@@ -167,6 +167,27 @@ const CHROME_IOS_DEFINITION: BrowserDefinition = {
   })),
 };
 
+const CHROME_ANDROID_DEFINITION: BrowserDefinition = {
+  name: 'Chrome Android',
+  logo: 'https://unpkg.com/@browser-logos/chrome@2.0.0/chrome.svg',
+  versions: [
+    '107',
+  ].map(browserVersion => ({
+    name: browserVersion,
+    data: {
+      type: DataType.FetchDescriptor,
+      capabilities: {
+        'bstack:options': {
+          osVersion: '12.0',
+          deviceName: 'Samsung Galaxy S22 Ultra',
+        },
+        browserName: 'Chrome',
+        browserVersion,
+      },
+    },
+  })),
+};
+
 const SAFARI_MACOS_DEFINITION: BrowserDefinition = {
   name: 'Safari (macOS)',
   logo: 'https://unpkg.com/@browser-logos/safari-ios@1.0.15/safari-ios.svg',
@@ -209,6 +230,28 @@ const EDGE_DEFINITION: BrowserDefinition = {
             osVersion: 'Monterey',
           },
           browserName: 'Edge',
+          browserVersion,
+        },
+      },
+    })),
+};
+
+const FIREFOX_WINDOWS_DEFINITION: BrowserDefinition = {
+  name: 'Firefox',
+  logo: 'https://unpkg.com/@browser-logos/firefox@3.0.9/firefox.svg',
+  versions: Array.from({length: 1 /*101 - 69*/})
+    .map((_, i) => 104 + i)
+    .map(version => `${version}.0`)
+    .map(browserVersion => ({
+      name: browserVersion,
+      data: {
+        type: DataType.FetchDescriptor,
+        capabilities: {
+          'bstack:options': {
+            os: 'Windows',
+            osVersion: '10',
+          },
+          browserName: 'Firefox',
           browserVersion,
         },
       },
@@ -278,7 +321,9 @@ const IE_DEFINITION: BrowserDefinition = {
 const BROWSERS: BrowserDefinition[] = [
   CHROME_DEFINITION,
   CHROME_IOS_DEFINITION,
-  // SAFARI_IOS_DEFINITION,
+  SAFARI_IOS_DEFINITION,
+  CHROME_ANDROID_DEFINITION,
+  FIREFOX_WINDOWS_DEFINITION,
   // SAFARI_MACOS_DEFINITION,
   // EDGE_DEFINITION,
   // FIREFOX_DEFINITION,
