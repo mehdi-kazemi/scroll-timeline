@@ -26,7 +26,7 @@ jobs:
         with:
           repository: web-platform-tests/wpt
           path: wpt
-          ref: x-polyfill-all-tests
+          ref: master
 
       - name: Build
         run: |
